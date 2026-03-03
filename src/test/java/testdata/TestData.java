@@ -2,17 +2,15 @@ package testdata;
 
 import com.github.javafaker.Faker;
 import java.util.*;
-import static components.RandomUtils.*;
+import static utils.RandomUtils.*;
 
 public class TestData {
     public static Faker fakerRu = new Faker(new Locale("ru"));
-    public static Faker faker = new Faker();
 
     public static String firstName = fakerRu.name().firstName();
     public static String lastName = fakerRu.name().lastName();
     public static String email = getRandomEmail(8);
-
-    public static String phone = getRandomPhoneByTemplate();
+    public static String phone = fakerRu.phoneNumber().subscriberNumber(10);
     public static String language = getRandomLanguage();
 
     public static String[] genders = {"Male", "Female", "Other"};
@@ -45,7 +43,7 @@ public class TestData {
             stateCities.get(state).toArray(new String[0])
     );
 
-    public static String address = faker.address().fullAddress();
+    public static String address = fakerRu.address().fullAddress();
     public static String shortIncorrectEmail = getRandomEmail(2);;
     public static String incorrectFormatEmail = getRandomString(8);
 }
