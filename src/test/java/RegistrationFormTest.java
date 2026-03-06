@@ -57,7 +57,7 @@ public class RegistrationFormTest {
         registrationFormPage.assertFieldOutput("firstName", firstName);
         registrationFormPage.assertFieldOutput("lastName", lastName);
         registrationFormPage.assertFieldOutput("email", email);
-        registrationFormPage.assertFieldOutput("phone", phone);
+        registrationFormPage.assertFieldOutput("phone", expectedPhone);
         registrationFormPage.assertFieldOutput("gender", gender);
         registrationFormPage.assertFieldOutput("stateCity", state);
         registrationFormPage.assertFieldOutput("stateCity", city);
