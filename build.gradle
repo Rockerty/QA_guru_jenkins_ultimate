@@ -16,6 +16,12 @@ dependencies {
     testImplementation 'com.codeborne:selenide:7.14.0'
     testImplementation 'io.github.bonigarcia:webdrivermanager:5.9.2'
     implementation 'com.github.javafaker:javafaker:1.0.2'
+    testImplementation "com.codeborne:pdf-test:1.5.0"
+    testImplementation "org.assertj:assertj-core:3.24.2"
+    testImplementation "com.codeborne:xls-test:1.4.3"
+    testImplementation 'com.opencsv:opencsv:5.9'
+    testImplementation "com.fasterxml.jackson.core:jackson-databind:2.13.1"
+    testImplementation 'com.jayway.jsonpath:json-path:2.9.0'
 
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }

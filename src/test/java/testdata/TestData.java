@@ -14,7 +14,6 @@ public class TestData {
 
     public static String firstName = fakerRu.name().firstName();
     public static String lastName = fakerRu.name().lastName();
-    //public static String email = fakerRu.internet().emailAddress();
     private static String generateRandomEmail(int length) {
         String part1 = fakerRu.regexify("[a-zA-Z0-9]{" + length + "}");
         String part2 = fakerRu.regexify("[a-zA-Z0-9]{" + length + "}");
