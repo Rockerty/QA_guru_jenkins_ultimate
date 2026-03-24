@@ -41,4 +41,9 @@ public class NegativeTests {
         assertTrue(false);
     }
 
+    @Test
+    void someTest7() {
+        assertTrue(false);
+    }
+
 }
