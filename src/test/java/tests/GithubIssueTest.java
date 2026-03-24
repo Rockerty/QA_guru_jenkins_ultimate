@@ -9,6 +9,9 @@ import org.junit.jupiter.api.Test;
 import pages.GithubSearchPage;
 import steps.GithubSteps;
 
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 public class GithubIssueTest {
@@ -21,6 +24,18 @@ public class GithubIssueTest {
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://github.com/";
     }
+
+    @Test
+    public void issueSearchWithClearListenerTest() {
+        open("");
+        $x("//*[@class='search-input']").click();
+        $x("//*[@id='query-builder-test']").scrollTo().setValue("rockerty/qa_guru_final");
+        $x("//*[@id='query-builder-test']").submit();
+        $x("(//div[@data-testid='results-list']//a)[1]").scrollTo().click();
+        $x("//*[@id='issues-tab']").scrollTo().click();
+        $x("(//div[contains(@class, 'ListItems-module__listItem')])[1]").shouldHave(text("First issue for automated test"));
+    }
+
 
     @Test
     public void issueSearchWithListenerTest() {
